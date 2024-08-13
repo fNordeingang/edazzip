@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+p {
+    color: aliceblue;
+}
+
+body {
+    background-color: #24232d;
+}
+
+.header {
+    background-color: #3b3a45;
+    height: 15vh;
+    width: 100vW;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.title {
+    color: aliceblue;
+    margin-top: 2.5vH;
+    margin-left:2.5vH;
+    height: 10vH;
+    font-size: 10vH;
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    width: fit-content;
+}
+
+.body {
+
+    position: absolute;
+    top: 15vH;
+    left: 0;
+}
+
+.sidebar {
+    background-color: #1e1d27;
+    position: fixed;
+    height: 85vH;
+    width: 20vW;
+    top: 15vH;
+    right: 0;
+    z-index: 100;
+}
+
+
+.category-title {
+    font-size: 50px;
+    margin-top: 5vH;
+    margin-left: 2vW;
+    margin-bottom: 5vh;
+}
+
+.product {
+    background-color: #3b3a45;
+    border-radius: 10px;
+    height: 200px;
+    margin-top: 5vH;
+    margin-left: 2vW;
+    width: 76vW;
+}
+
+.product-name {
+    font-size: 30px;
+    margin-left:30px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+.product-info-popup {
+    visibility: hidden;
+}
+
+.product-add-popup {
+    visibility: hidden;
+}
+
+.product-price {
+    color: aliceblue;
+    position: absolute;
+    margin-top: 10px;
+    right: 200px;
+}
+
+.product-info {
+    position: absolute;
+    margin-left: 50px;
+    margin-top: 70px;
+    font-size: 22px;
+}
+
+.product-info-button {
+    position: absolute;
+    margin-top: 75px;
+    margin-left: 20px;
+    height: 23px;
+    width: 23px;
+    border-radius: 12px;
+
+}
+
+.product-add-button {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    border-radius: 17px;
+    background-color: orange;
+    border: 0;
+    font-size: 20px;
+    right: 150px;
+    margin-top: 120px;
+}
+
+.product-info-popup {
+    background-color: #1e1d27;
+    position: absolute;
+    z-index: 50;
+    height: 200px;
+    border-radius: 10px;
+    left: 8vW;
+    padding: 10px;
+    width: 40vW;
+}
+
+.product-info-close-button {
+    right: 10px;
+    position: absolute;
+    font-style: bold;
+    color: aliceblue;
+    background-color: transparent;
+    border: 0;
+}
+
+.product-info-popup-header {
+    font-size: 20px;
+    line-height: 0;
+    position: relative;
+    left: 20px;
+}
+.product-info-popup-text {
+    position: relative;
+    left: 30px;
+}
