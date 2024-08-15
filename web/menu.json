@@ -26,6 +26,16 @@
                             "size":"45cm",
                             "price":13.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -51,6 +61,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":16.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 },
@@ -78,6 +98,16 @@
                             "size":"45cm",
                             "price":16.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -103,6 +133,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":16.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 },
@@ -130,6 +170,16 @@
                             "size":"45cm",
                             "price":17.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -155,6 +205,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":16.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 },
@@ -182,6 +242,16 @@
                             "size":"45cm",
                             "price":17.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -207,6 +277,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":16.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 },
@@ -234,6 +314,16 @@
                             "size":"45cm",
                             "price":17.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -259,6 +349,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":16.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 },
@@ -286,6 +386,16 @@
                             "size":"45cm",
                             "price":17.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -311,6 +421,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":17.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 },
@@ -338,6 +458,16 @@
                             "size":"45cm",
                             "price":17.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -363,6 +493,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":16.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 },
@@ -390,6 +530,16 @@
                             "size":"45cm",
                             "price":17.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -416,6 +566,16 @@
                             "size":"45cm",
                             "price":17.9
                         }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
+                        }
                     ]
                 },
                 {
@@ -441,6 +601,16 @@
                             "name":"family",
                             "size":"45cm",
                             "price":16.9
+                        }
+                    ],
+                    "ingredients":[
+                        {
+                            "name":"Knoblauch",
+                            "price":0
+                        },
+                        {
+                            "name":"extra Scharf",
+                            "price":0
                         }
                     ]
                 }

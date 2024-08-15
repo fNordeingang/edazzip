@@ -8,7 +8,7 @@ fetch("./menu.json")
             var piz = data.product.pizza[i];
             var prod = document.createElement("div");
             prod.className = 'pizza-product';
-            prod.id=("pizza "+piz.name).toLowerCase();
+            prod.id=("pizza "+piz.name+" "+piz.id).toLowerCase();
             pizza.appendChild(prod);
 
             var name = document.createElement("p");
