@@ -7,8 +7,8 @@
                     "name":"Margherita",
                     "veg":true,
                     "description":"Tomatensauce, Käse",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1, 2],
+                    "allergens":["a1", "d"],
                     "meat":[],
                     "price":[
                         {
@@ -33,8 +33,8 @@
                     "name":"Italia",
                     "veg":true,
                     "description":"Paprika, Zwiebeln, Spinat",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1, 2],
+                    "allergens":["a1", "d"],
                     "meat":[],
                     "price":[
                         {
@@ -59,8 +59,8 @@
                     "name":"Mykonos",
                     "veg":false,
                     "description":"Gyros, Peperoni, Hirtenkäse",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1, 2],
+                    "allergens":["a1", "d"],
                     "meat":["Gyros"],
                     "price":[
                         {
@@ -85,8 +85,8 @@
                     "name":"Spinaci",
                     "veg":true,
                     "description":"Spinat, Hirtenkäse",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1, 2],
+                    "allergens":["a1", "d"],
                     "meat":[],
                     "price":[
                         {
@@ -111,8 +111,8 @@
                     "name":"Inferno",
                     "veg":false,
                     "description":"Hollandaise, Sucuk, Jalapenos, Mais",
-                    "additives":[2],
-                    "allergens":["d","a1","b","g"],
+                    "additives":[1, 2],
+                    "allergens":["a1","b","d","g"],
                     "meat":["Sucuk"],
                     "price":[
                         {
@@ -137,8 +137,8 @@
                     "name":"Bacon",
                     "veg":false,
                     "description":"Bacon, Zwiebeln",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1,2],
+                    "allergens":["a1","d"],
                     "meat":["Bacon"],
                     "price":[
                         {
@@ -163,8 +163,8 @@
                     "name":"Hollandaise",
                     "veg":false,
                     "description":"Hähnchenfleisch, Broccoli, Hollandaise",
-                    "additives":[2],
-                    "allergens":["d","a1","b","g"],
+                    "additives":[1, 2],
+                    "allergens":["a1","b","d","g"],
                     "meat":["Hähnchenfleisch"],
                     "price":[
                         {
@@ -189,8 +189,8 @@
                     "name":"Gyros",
                     "veg":false,
                     "description":"Gyros, Zwiebeln",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1,2],
+                    "allergens":["a1","d"],
                     "meat":["Gyros"],
                     "price":[
                         {
@@ -215,8 +215,8 @@
                     "name":"Neapel",
                     "veg":true,
                     "description":"Tomaten, Basilikum, Mozarella",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1,2],
+                    "allergens":["a1","d"],
                     "meat":[],
                     "price":[
                         {
@@ -241,8 +241,8 @@
                     "name":"Hawaii",
                     "veg":false,
                     "description":"Schinken, Ananas",
-                    "additives":[2,4,5],
-                    "allergens":["d","a1"],
+                    "additives":[1,2,4,5],
+                    "allergens":["a1","d"],
                     "meat":["Schinken"],
                     "price":[
                         {
@@ -267,8 +267,8 @@
                     "name":"California",
                     "veg":false,
                     "description":"Hähnchenbrust, Zwiebeln, Mais, Barbecue-Sauce",
-                    "additives":[2,1,3],
-                    "allergens":["d","a1"],
+                    "additives":[1,2,3],
+                    "allergens":["a1","d"],
                     "meat":["Hähnchenfleisch"],
                     "price":[
                         {
@@ -293,8 +293,8 @@
                     "name":"Boston",
                     "veg":false,
                     "description":"Hähncehnbrust, Broccoli, Champignons",
-                    "additives":[2],
-                    "allergens":["d","a1"],
+                    "additives":[1, 2],
+                    "allergens":["a1","d"],
                     "meat":["Hähnchenfleisch"],
                     "price":[
                         {
@@ -319,8 +319,8 @@
                     "name":"Kreta",
                     "veg":true,
                     "description":"Spinat, Oliven, Hirtenkäse",
-                    "additives":[2,6],
-                    "allergens":["d","a1"],
+                    "additives":[1,2,6],
+                    "allergens":["a1","d"],
                     "meat":[],
                     "price":[
                         {
@@ -345,8 +345,8 @@
                     "name":"Diablo",
                     "veg":false,
                     "description":"Salami, Peperoni",
-                    "additives":[2,1,5],
-                    "allergens":["d","a1"],
+                    "additives":[1,2,5],
+                    "allergens":["a1","d"],
                     "meat":["Salami"],
                     "price":[
                         {
@@ -371,8 +371,8 @@
                     "name":"Quattro Formaggi",
                     "veg":true,
                     "description":"Gorgonzola, Mozzarella, Gouda, Hirtenkäse",
-                    "additives":[2,1],
-                    "allergens":["d","a1"],
+                    "additives":[1,2],
+                    "allergens":["a1","d"],
                     "meat":[],
                     "price":[
                         {
@@ -397,8 +397,8 @@
                     "name":"Capricciosa",
                     "veg":false,
                     "description":"Schinken, Salami, Zwiebeln, Champignons",
-                    "additives":[2,4,5],
-                    "allergens":["d","a1"],
+                    "additives":[1,2,4,5],
+                    "allergens":["a1","d"],
                     "meat":["Salami","Schinken"],
                     "price":[
                         {
@@ -423,8 +423,8 @@
                     "name":"4 Jahreszeiten",
                     "veg":false,
                     "description":"Schinken, Paprika, Spinat, Zwiebeln",
-                    "additives":[2,4,5],
-                    "allergens":["d","a1"],
+                    "additives":[1,2,4,5],
+                    "allergens":["a1","d"],
                     "meat":["Schinken"],
                     "price":[
                         {
@@ -471,7 +471,7 @@
         "a2":"glutenhaltiges Getreide (Gerste)",
         "b":"Eier",
         "c":"Fisch",
-        "d":"Milch & Laktase",
+        "d":"Milch & Laktose",
         "e":"Senf",
         "f":"Krebstiere",
         "g":"Sellerie",
