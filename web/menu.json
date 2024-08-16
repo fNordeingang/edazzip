@@ -614,9 +614,32 @@
                         }
                     ]
                 }
-            ]
-            
-        ,
+                
+        ],
+
+        "calzone":[
+            {
+                "id":118,
+                "name":"Calzone",
+                "veg":true,
+                "description":"Tomatensauce, Käse und Füllung nach Wahl",
+                "additives":[1,2],
+                "allergens":["a1","d"],
+                "meat":[],
+                "price":5.9,
+                "ingredients":[
+                    {
+                        "name":"Knoblauch",
+                        "price":0
+                    },
+                    {
+                        "name":"extra Scharf",
+                        "price":0
+                    }
+                ]
+            }
+        ],
+
         "pasta":{
 
         }
