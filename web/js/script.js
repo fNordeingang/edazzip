@@ -1,106 +1,168 @@
-/*---Inhalte erstellen---*/
-fetch("./menu.json")
-    .then((res) => res.json())
-    .then((data) => {
-        var pizza = document.getElementsByClassName("category-pizza")[0];
+document.addEventListener('DOMContentLoaded', () => {
+    function isVeg(veg) {
+        return veg ? ' 🌱' : '';
+    }
 
-        for (let i = 0; i < data.product.pizza.length; i++) {
-            var piz = data.product.pizza[i];
-            var prod = document.createElement("div");
+    /*function formatList(ids, data, type) {
+        if (!ids || ids.length === 0) {
+            return 'Keine';  // wnn die Liste leer ist
+        }
+
+        const lookup = data[type];
+        return ids.map(id => lookup[id]).join(', ');
+            }*/
+    
+    function additives(add, data){
+        var erg = "Dieses Produkt enthält ";
+        for (let j = 0; j < add.length; j++) {
+            erg = erg+data.additives[add[j]];
+            if (j == add.length-1) {
+                erg = erg+".";
+            }else if(j == add.length-2) {
+                erg = erg+" und ";
+            }else if(j < add.length-2) {
+                erg = erg+", ";
+            }
+        } 
+        return erg;
+    }
+
+    function allergens(alg, data){
+        var erg = "Dieses Produkt enthält ";
+        for (let j = 0; j < alg.length; j++) {
+            erg = erg+data.allergens[alg[j]];
+            if (j == alg.length-1) {
+                erg = erg+".";
+            }else if(j == alg.length-2) {
+                erg = erg+" und ";
+            }else if(j < alg.length-2) {
+                erg = erg+", ";
+            }
+        } 
+        return erg;
+    }
+    
+    function meat(met, data){
+        var erg = " Dieses Produkt enthält ";
+        for (let j = 0; j < met.length; j++) {
+            erg = erg+data.meat[met[j]];
+            if (j == met.length-1) {
+                erg = erg+".";
+            }else if(j == met.length-2) {
+                erg = erg+" und ";
+            }else if(j < met.length-2) {
+                erg = erg+", ";
+            }
+        } 
+        return erg;
+    }
+
+    fetch("./menu.json")
+    .then(res => res.json())
+    .then(data => {
+        const pizzaContainer = document.querySelector(".category-pizza");
+        const fragment = document.createDocumentFragment();
+
+        data.product.pizza.forEach(piz => {
+            const prod = document.createElement('div');
             prod.className = 'pizza-product';
-            prod.id=("pizza "+piz.name+" "+piz.id).toLowerCase();
-            pizza.appendChild(prod);
-
-            var name = document.createElement("p");
-            name.className="pizza-product-name";
-            name.innerHTML=(piz.name+isVeg(piz.veg));
-            prod.appendChild(name);
-
-            var price = document.createElement("table");
-            price.className = "pizza-product-price";
+            prod.id = `pizza-${piz.name.toLowerCase()}`;
+            prod.innerHTML = `
+            <p class="pizza-product-name">${piz.name}${isVeg(piz.veg)}</p>
+            <table class="pizza-product-price">
+                <tr class="pizza-product-price-header">${piz.price.map((p, index) => `
+                    <td>
+                        ${p.name}
+                    </td>
+                `).join('')}</tr>
+                <tr class="pizza-product-price-size">${piz.price.map(p => `<td>${p.size}</td>`).join('')}</tr>
+                <tr class="pizza-product-price-tag">${piz.price.map(p => `<td>${p.price}€</td>`).join('')}</tr>
+            </table>
+            <p class="pizza-product-info">${piz.description}</p>
+            <button class="pizza-product-info-button">i</button>
+            <button class="pizza-product-add-button">Hinzufügen</button>
+            <div class="pizza-product-info-popup" style="visibility:hidden;">
+                <button class="pizza-product-info-close-button">X</button>
+                <p class="pizza-product-info-popup-header">Zusatzstoffe</p>
+                <p class="pizza-product-info-popup-text">${additives(piz.additives, data)}</p>
+                <p class="pizza-product-info-popup-header">Allergene</p>
+                <p class="pizza-product-info-popup-text">${allergens(piz.allergens, data)} ${piz.veg ? '' : meat(piz.meat, data)}</p>
+            </div>
+            `;
+            fragment.appendChild(prod);
+        });
             
-            var head = document.createElement("tr");
-            head.className = "pizza-product-price-header";
-            price.appendChild(head);
+        pizzaContainer.appendChild(fragment);
 
-            var size = document.createElement("tr");
-            size.className = "pizza-product-price-size";
-            price.appendChild(size);
+        /*// Event listener um ein Produkt hinzuzufügen
+        document.querySelectorAll('.pizza-product-add-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const product = event.target.closest('.pizza-product');
+                const selectedPrice = product.querySelector('input[name^="price-"]:checked');
 
-            var tag = document.createElement("tr");
-            tag.className = "pizza-product-price-tag";
-            price.appendChild(tag);
-            
-            for (let j = 0; j < piz.price.length; j++) {
-                var head_ = document.createElement("td");
-                head_.innerHTML = piz.price[j].name;
-                head.appendChild(head_);
+                if (selectedPrice) {
+                    // Hintergrundfarbe aller priceSections resetten
+                    product.querySelectorAll('.pizza-product-price td').forEach(td => {
+                        td.style.backgroundColor = ''; // Reset to default
+                    });
 
-                var size_ = document.createElement("td");
-                size_.innerHTML = piz.price[j].size;
-                size.appendChild(size_);
+                    // Hintergrundfarbe zur gewählten priceSection hinzufügen
+                    const priceSection = selectedPrice.closest('td');
+                    priceSection.style.backgroundColor = '#FFA500'; // andereFarbe evt? :D
 
-                var tag_ = document.createElement("td");
-                tag_.innerHTML = piz.price[j].price+"€";
-                tag.appendChild(tag_);
+                    // *** AUSWAHL IN COOKIE SPEICHERN ***
+                    const pizzaId = product.id;
+                    const selectedValue = selectedPrice.value;
+                    document.cookie = `${pizzaId}=${selectedValue}; path=/`;
+                } else {
+                    alert('Bitte wählen Sie eine Größe.');
             }
+            });
+        });
 
-            prod.appendChild(price);
-
-            var info = document.createElement("p");
-            info.className = "pizza-product-info";
-            info.innerHTML = piz.description;
-            prod.appendChild(info);
-
-            var info_btn = document.createElement("button");
-            info_btn.className = "pizza-product-info-button";
-            info_btn.setAttribute("onclick", "popupinfo(this)");
-            info_btn.innerHTML = "i";
-            prod.appendChild(info_btn);
-
-            var add_btn = document.createElement("button");
-            add_btn.className = "pizza-product-add-button";
-            add_btn.setAttribute("onclick","popupadd(this)");
-            add_btn.innerHTML = "Hinzufügen";
-            prod.appendChild(add_btn);
-
-            var info_popup = document.createElement("div");
-            info_popup.className = "pizza-product-info-popup";
+        // event listener um eine Produktauswahl wieder zu löschen
+        document.querySelectorAll('.pizza-product-delete-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const product = event.target.closest('.pizza-product');
+                const pizzaId = product.id;
             
-            var info_popup_close = document.createElement("button");
-            info_popup_close.className = "pizza-product-info-close-button";
-            info_popup_close.setAttribute("onclick","closeinfo(this)");
-            info_popup_close.innerHTML = "X";
-            info_popup.appendChild(info_popup_close);
+                // radio button zurücksetzen
+                const selectedPrice = product.querySelector('input[name^="price-"]:checked');
+                if (selectedPrice) {
+                    selectedPrice.checked = false;
+        }
 
-            var info_popup_add_head = document.createElement("p");
-            info_popup_add_head.className = "pizza-product-info-popup-header";
-            info_popup_add_head.innerHTML = "Zusatzstoffe";
-            info_popup.appendChild(info_popup_add_head);
+                // Hintergrundfarbe aller priceSections resetten
+                product.querySelectorAll('.pizza-product-price td').forEach(td => {
+                    td.style.backgroundColor = ''; // Reset to default
+});
 
-            var info_popup_add_text = document.createElement("p");
-            info_popup_add_text.className = "pizza-product-info-popup-text";
-            info_popup_add_text.innerHTML = additives(piz.additives, data);
-            info_popup.appendChild(info_popup_add_text);
+                // *** COOKIE LÖSCHEN, wegen Änderung der Auswahl
+                // TODO Nur Teile des Cookies ändern
+                document.cookie = `${pizzaId}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
 
-            var info_popup_alg_head = document.createElement("p");
-            info_popup_alg_head.className = "pizza-product-info-popup-header";
-            info_popup_alg_head.innerHTML = "Allergene";
-            info_popup.appendChild(info_popup_alg_head);
+                alert('Ihre Auswahl wurde gelöscht.');
+            });
+        });*/
 
-            var info_popup_alg_text = document.createElement("p");
-            info_popup_alg_text.className = "pizza-product-info-popup-text";
-            info_popup_alg_text.innerHTML = allergens(piz.allergens, data);
-            if(!piz.veg){
-                info_popup_alg_text.innerHTML += meat(piz.meat, data);
-            }
-            info_popup.appendChild(info_popup_alg_text);
-            prod.appendChild(info_popup);
+        // event listener für das Info popup
+        document.querySelectorAll('.pizza-product-info-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const product = event.target.closest('.pizza-product');
+                const popup = product.querySelector('.pizza-product-info-popup');
+                popup.style.visibility = 'visible';
+            });
+        });
 
-            //TODO add this \/
-            /*
-            
-            <div class="pizza-product-add-popup">
+        // event listenetr um das Info Popup wieder zu schliessen
+        document.querySelectorAll('.pizza-product-info-close-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const popup = event.target.closest('.pizza-product-info-popup');
+                popup.style.visibility = 'hidden';
+            });
+        });
+
+        /*<div class="pizza-product-add-popup">
                 <p>Größe</p>
                 <select name="pizza-product-add-popup-size" id="pizza-size">
                     <option value="normal">Normal</option>
@@ -116,61 +178,24 @@ fetch("./menu.json")
             </div>
             
             */
+
             
-        }
+
+        /*// event listener für die radio buttons um die Farbe bei Auswahlwechsel zurückzusetzen
+        document.querySelectorAll('input[name^="price-"]').forEach(radio => {
+            radio.addEventListener('change', event => {
+                const product = event.target.closest('.pizza-product');
+                product.querySelectorAll('.pizza-product-price td').forEach(td => {
+                    td.style.backgroundColor = ''; // Setze ALL DIE FARBEN zurück :)
+                });
+                const selectedPriceSection = event.target.closest('td');
+                selectedPriceSection.style.backgroundColor = '#FFA500'; // gewählte Option hervorheben
+            });
+        });*/
+    });
 });
-
-function isVeg(veg){
-    if (veg) {
-        return " 🌿";
-    }else{
-        return "";
-    }
-}
-
-function additives(add, data){
-    var erg = "Dieses Produkt enthält ";
-    for (let j = 0; j < add.length; j++) {
-        erg = erg+data.additives[add[j]];
-        if (j == add.length-1) {
-            erg = erg+".";
-        }else if(j == add.length-2) {
-            erg = erg+" und ";
-        }else if(j < add.length-2) {
-            erg = erg+", ";
-        }
-    } 
-    return erg;
-}
-
-function allergens(alg, data){
-    var erg = "Dieses Produkt enthält ";
-    for (let j = 0; j < alg.length; j++) {
-        erg = erg+data.allergens[alg[j]];
-        if (j == alg.length-1) {
-            erg = erg+".";
-        }else if(j == alg.length-2) {
-            erg = erg+" und ";
-        }else if(j < alg.length-2) {
-            erg = erg+", ";
-        }
-    } 
-    return erg;
-}
-
-function meat(met, data){
-    var erg = " Dieses Produkt enthält ";
-    for (let j = 0; j < met.length; j++) {
-        erg = erg+data.meat[met[j]];
-        if (j == met.length-1) {
-            erg = erg+".";
-        }else if(j == met.length-2) {
-            erg = erg+" und ";
-        }else if(j < met.length-2) {
-            erg = erg+", ";
-        }
-    } 
-    return erg;
-}
-
-
+// TODO: Sonderzutaten einbinden: Knoblauch, Schaaf, Orgigami ;)
+// TODO: Anzahl der gewählten Produkte ermöglichen, Ändern erlauben
+// TODO: Cookie zum Ausdruck der Bestellung auswerten
+// TODO: Sidebar erstellen
+// TODO: so, jetzt Schlaf, ja <müde-Smiley>

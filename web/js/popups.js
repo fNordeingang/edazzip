@@ -1,10 +1,11 @@
-
 /*---Popups---*/
 
-function popupinfo(e){
-    e.parentNode.querySelector('.pizza-product-info-popup').style.visibility = 'visible';
+function closeinfo(event) {
+    event.target.closest('.pizza-product-info-popup').style.visibility = 'hidden';
 }
 
-function closeinfo(e){
-    e.parentNode.style.visibility='hidden';
+function popupinfo(event) {
+    const popup = event.target.closest('.pizza-product').querySelector('.pizza-product-info-popup');
+    popup.style.visibility = 'visible';
+    popup.style.zIndex = 1000;
 }
