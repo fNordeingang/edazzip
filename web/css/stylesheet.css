@@ -15,7 +15,7 @@
 	--bgAddButtonColor: #FFA500; 
 }
 
-p,h1,h2 {
+p,h1,h2,label {
 	color: var(--TextColor);
 }
 
@@ -153,4 +153,37 @@ aside {
 .pizza-product-info-popup-text {
 	left: 30px;
     position: relative;
+}
+
+.pizza-product-add-popup {
+    visibility: hidden;
+    background-color: var(--bgPopupColor);
+    border-radius: 10px;
+    height: 400px;
+    left: 8vW;
+    padding: 10px;
+    position: absolute;
+    width: 60vW;
+    z-index: 50;
+}
+
+.pizza-product-add-close-button {
+    background-color: transparent;
+    border: 0;
+    color: var(--TextColor);
+    right: 10px;
+    position: absolute;
+}
+
+.pizza-product-add {
+    background-color: var(--bgAddButtonColor);
+    border: 0;
+    border-radius: 15px;
+    height: 40px;
+    position: absolute;
+    font-size: large;
+    padding-left: 10px;
+    padding-right: 10px;
+    right: 20px;
+    bottom: 20px;
 }

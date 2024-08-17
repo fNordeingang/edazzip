@@ -88,6 +88,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p class="pizza-product-info-popup-header">Allergene</p>
                 <p class="pizza-product-info-popup-text">${allergens(piz.allergens, data)} ${piz.veg ? '' : meat(piz.meat, data)}</p>
             </div>
+            <div class="pizza-product-add-popup">
+                <button class="pizza-product-add-close-button">X</button>
+                <label for="pizza-size" classe="pizza-product-add-size-label">Größe</label>
+                <select name="pizza-product-add-popup-size" class="pizza-product-add-size" id="pizza-size">
+                    <option value="normal">Normal</option>
+                    <option value="jumbo">Jumbo</option>
+                    <option value="family">Family</option>
+                </select>
+                <label for="pizza-garlic" class="pizza-product-add-garlic-label">Knoblauch</label>
+                <input type="checkbox" class="pizza-product-add-popup-garlic" id="pizza-garlic">
+                <label for="pizza-spicy" class="pizza-product-add-spicy-label">Scharf</label>
+                <input type="checkbox" class="pizza-product-add-popup-spicy" id="pizza-spicy">
+
+                <button class="pizza-product-add">In den Einkaufswagen</button>
+            </div>
             `;
             fragment.appendChild(prod);
         });
@@ -162,6 +177,21 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        //event listener für das Add Popup
+        document.querySelectorAll('.pizza-product-add-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const product = event.target.closest('.pizza-product');
+                const popup = product.querySelector('.pizza-product-add-popup');
+                popup.style.visibility = 'visible';
+            });
+        });
+
+        document.querySelectorAll('.pizza-product-add-close-button').forEach(button => {
+            button.addEventListener('click', event => {
+                const popup = event.target.closest('.pizza-product-add-popup');
+                popup.style.visibility = 'hidden';
+            });
+        });
         /*<div class="pizza-product-add-popup">
                 <p>Größe</p>
                 <select name="pizza-product-add-popup-size" id="pizza-size">
@@ -179,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             */
 
-            
+
 
         /*// event listener für die radio buttons um die Farbe bei Auswahlwechsel zurückzusetzen
         document.querySelectorAll('input[name^="price-"]').forEach(radio => {
