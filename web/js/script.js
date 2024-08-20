@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="pizza-product-add-popup">
                 <button class="pizza-product-add-close-button">X</button>
-                <label for="pizza-size" classe="pizza-product-add-size-label">Größe</label>
+                <label for="pizza-size" class="pizza-product-add-size-label">Größe</label>
                 <select name="pizza-product-add-popup-size" class="pizza-product-add-size" id="pizza-size">
                     <option value="normal">Normal</option>
                     <option value="jumbo">Jumbo</option>
@@ -108,6 +108,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
             
         pizzaContainer.appendChild(fragment);
+
+        document.querySelectorAll('.pizza-product-add').forEach(button => {
+            button.addEventListener('click', event => {
+                const product = event.target.closest('.pizza-product');
+                const selectedPrice = product.querySelector('.pizza-product-add-size');
+                const pizzaId = product.id;
+                const selectedValue = selectedPrice.value;
+
+                data.product.pizza.forEach(piz => {
+                    if(piz.name.toLowerCase() == pizzaId.split("-")[1]){
+                        alert(piz.id);
+                    }
+                });
+
+            });
+        });
 
         /*// Event listener um ein Produkt hinzuzufügen
         document.querySelectorAll('.pizza-product-add-button').forEach(button => {

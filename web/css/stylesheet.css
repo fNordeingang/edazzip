@@ -13,6 +13,7 @@
 	--bgTitleColor: #F0F8FF;
 	--bgCloseButtonColor: transparent;
 	--bgAddButtonColor: #FFA500; 
+	--bgSizeColor: #00FFA5;
 }
 
 p,h1,h2,label {
@@ -186,4 +187,42 @@ aside {
     padding-right: 10px;
     right: 20px;
     bottom: 20px;
+}
+
+.pizza-product-add-size-label {
+	position: absolute;
+	top:40px;
+	left: 35px;
+}
+
+.pizza-product-add-size {
+	border: none;
+	border-radius: 5px;
+	position: absolute;
+	top: 40px;
+	left: 90px;
+}
+
+.pizza-product-add-popup-garlic {
+	position: absolute;
+	top: 130px;
+	left: 130px;
+}
+
+.pizza-product-add-garlic-label {
+	position: absolute;
+	top: 130px;
+	left: 45px;
+}
+
+.pizza-product-add-popup-spicy {
+	position: absolute;
+	top: 160px;
+	left: 130px;
+}
+
+.pizza-product-add-spicy-label {
+	position: absolute;
+	top: 160px;
+	left: 75px;
 }
