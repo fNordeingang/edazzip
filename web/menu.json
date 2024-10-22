@@ -14,7 +14,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":5.9
+                            "price":6.9
                         },
                         {
                             "name":"jumbo",
@@ -50,7 +50,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -86,7 +86,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -122,7 +122,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -194,7 +194,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -230,7 +230,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -266,7 +266,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -338,7 +338,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -374,7 +374,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":8.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -410,7 +410,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":8.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -446,7 +446,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.5
+                            "price":8.5
                         },
                         {
                             "name":"jumbo",
@@ -482,7 +482,7 @@
                         {
                             "name":"normal",
                             "size":"30cm",
-                            "price":7.2
+                            "price":8.9
                         },
                         {
                             "name":"jumbo",
@@ -626,7 +626,7 @@
                 "additives":[1,2],
                 "allergens":["a1","d"],
                 "meat":[],
-                "price":5.9,
+                "price":6.9,
                 "ingredients":[
                     {
                         "name":"Knoblauch",
@@ -640,9 +640,38 @@
             }
         ],
 
-        "pasta":{
-
-        }
+        "pasta":[
+          {
+              "id":201,
+              "name":"Spaghetti Napoli",
+              "veg":false,
+              "description":"Napoli-Sauce",
+              "additives":[],
+              "allergens":["a1","g"],
+              "meat":[],
+              "price":8.5
+          },
+          {
+              "id":202,
+              "name":"Spaghetti Bolognese",
+              "veg":false,
+              "description":"Rinderhackfleisch",
+              "additives":[],
+              "allergens":["a1","g"],
+              "meat":["Rind"],
+              "price":8.9
+          },
+          {
+              "id":203,
+              "name":"Spaghetti Carbonara Hafen",
+              "veg":false,
+              "description":"Bacon, Ei und Sahnesauce",
+              "additives":[2,5],
+              "allergens":["a1","b","d"],
+              "meat":["Bacon"],
+              "price":8.9
+          }
+        ]
     },
     "additives":{
         "1":"Farbstoff",
@@ -678,6 +707,7 @@
         "Gyros":"Schwein",
         "Sucuk":"Totes Tier",
         "Bacon":"Schwein",
-        "Hähnchenfleisch":"Hähnchen"
+        "Hähnchenfleisch":"Hähnchen",
+        "Rind":"Rindfleisch"
     }
 }
